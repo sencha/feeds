@@ -1,0 +1,35 @@
+{
+  "name": "google-feeds-replacement",
+  "version": "1.0.0",
+  "description": "Hosted google-feeds-replacement, drop in",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --harmony-async-await ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mschwartz/google-feeds-replacement.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Mike Schwartz <mschwartz@sencha.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mschwartz/google-feeds-replacement/issues"
+  },
+  "homepage": "https://github.com/mschwartz/google-feeds-replacement#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "connect": "^3.5.0",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "feedparser": "^2.0.0",
+    "iconv": "^2.2.1",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

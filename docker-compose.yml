@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+
+  web:
+    build: .
+    volumes:
+      - ./:/home/app
+      - /home/app/node_modules
+      - /home/app/.config
+    command: nodemon -L --debug=0.0.0.0:5858 -e js -x "node --harmony-async-await" index.js
+    ports:
+      - 8080:8080
+      - 5858:5858
+    networks:
+      - all
+    environment:
+      - TZ=America/Los_Angeles
+      - HOME=/home/app
+      - NODE_ENV=development
+      - PORT=3000
+networks:
+  all:
