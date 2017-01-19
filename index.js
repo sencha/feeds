@@ -7,13 +7,13 @@ const Feed = require('./lib/Feed'),
     serveStatic = require('serve-static'),
     bodyParser = require('body-parser'),
     cors = require('cors'),
-    app = express()
+    app = express();
 
-app.use(cors())
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(serveStatic('public/ext-6.2.1'))
+app.use(serveStatic('public/ext-6.2.1'));
 
 app.get('/jsapi', async function(req, res) {
     res.send(`
@@ -45,17 +45,17 @@ app.get('/jsapi', async function(req, res) {
                                 }
                             });
                         }
-                    }
+                    };
                 }
             }
         };
-    `)
-})
+    `);
+});
 
 app.post('/feed', async function(req, res) {
-    const url = req.body.url
+    const url = req.body.url;
     try {
-        const data = await new Feed(url).fetch()
+        const data = await new Feed(url).fetch();
         res.send({
             total: data.length,
             feed:  {
@@ -72,13 +72,13 @@ app.post('/feed', async function(req, res) {
                     }
                 })
             }
-        })
+        });
     }
     catch (e) {
-        console.dir(e)
+        console.dir(e);
     }
 })
 
 app.listen(8080, () => {
-    console.log('google-feed-replacement listening on port 8080')
-})
+    console.log('google-feed-replacement listening on port 8080');
+});
